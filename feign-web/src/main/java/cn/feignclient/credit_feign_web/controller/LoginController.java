@@ -427,6 +427,8 @@ public class LoginController extends BaseController {
 	 		user.setUserName(tempResult.getResultObj().getResultPwd());
 	 		user.setUserId(tempResult.getResultObj().getCreUserId().toString());
 	 		token = tempResult.getResultObj().getResultPwd();
+	 		
+	 		logger.info("{}, 账号登录成功，ip:{}",userName,super.getIpAddr(request));
 		}
 		
 		String userMd5str = UUIDTool.getInstance().getUUID();
